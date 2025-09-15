@@ -65,4 +65,14 @@ storage_allowed_locations = (
     's3://snowflakeintigration/Raw_Data/',
     's3://snowflakeintigration/Cleaned_Data/'
 );
+```
+
+### How to Use
+- Upload raw CSV files to S3 Raw_Data folder.
+- Run snowflake_s3_pipeline.sql in Snowflake worksheet.
+- Check pipe status to verify ingestion:
+```sql
+select system$pipe_status('S3_pipe');
+```
+- Cleaned data CSV will appear in the Cleaned_Data stage on S3.
 
